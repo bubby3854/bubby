@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+    <style>
+        /* 스타일 시트 */
+    </style>
+</head>
+<body>
+    <h1>게시글 수정</h1>
+    <form action="/update/{{simpleBbsDto.id}}" method="post">
+        <div>
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" value="{{simpleBbsDto.title}}" required>
+        </div>
+        <div>
+            <label for="content">내용:</label>
+            <textarea id="content" name="content" required>{{simpleBbsDto.content}}</textarea>
+        </div>
+        <div>
+            <label for="writer">작성자:</label>
+            <input type="text" id="writer" name="writer" value="{{simpleBbsDto.writer}}" required>
+        </div>
+        <button type="submit">수정하기</button>
+    </form>
+    <a href="/simpleBbsList">목록으로 돌아가기</a>
+</body>
+</html>
+
+
